@@ -10,7 +10,9 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "check": "node scripts/smoke-test.js",
+    "prepublishOnly": "npm run check && npm test"
   },
   "repository": {
     "type": "git",
