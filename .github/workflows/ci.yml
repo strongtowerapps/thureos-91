@@ -1,0 +1,28 @@
+name: Thureos-91 CI
+
+# What events trigger
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Cloning the code
+      uses: actions/checkout@v3
+
+    - name: 🟢 Configuring Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: 📦 Installing dependencies
+      run: npm install
+
+    - name: 🧪 Running Thureos-91 Tests
+      run: npm test

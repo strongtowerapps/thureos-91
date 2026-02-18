@@ -1,0 +1,40 @@
+{
+  "name": "thureos-91",
+  "version": "1.0.0",
+  "description": "High-density Base-91 protocol with XOR encryption and CRC-16 integrity.",
+  "main": "src/index.js",
+  "type": "module",
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strongtowerapps/thureos-91.git"
+  },
+  "keywords": [
+    "encoding",
+    "base91",
+    "security",
+    "crc16",
+    "encryption",
+    "react-native",
+    "strong-tower"
+  ],
+  "author": "Strong Tower (Strong Tower Apps)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "fast-text-encoding": "^1.0.6"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
