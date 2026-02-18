@@ -1,6 +1,6 @@
 {
   "name": "thureos-91",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "High-density Base-91 protocol with XOR encryption and CRC-16 integrity.",
   "main": "src/index.js",
   "type": "module",
