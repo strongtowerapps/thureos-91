@@ -29,3 +29,5 @@ jobs:
 
     - name: Run Integrity Stress Test
       run: npm run test:stress
+      env:
+        NODE_OPTIONS: --experimental-vm-modules

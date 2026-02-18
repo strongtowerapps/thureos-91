@@ -13,7 +13,7 @@
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "check": "node scripts/smoke-test.js",
     "prepublishOnly": "npm run check && npm test",
-    "test:stress": "jest tests/thureos-91.stress.test.js"
+    "test:stress": "node --experimental-vm-modules node_modules/jest/bin/jest.js tests/Thureos-91.stress.test.js"
   },
   "repository": {
     "type": "git",
