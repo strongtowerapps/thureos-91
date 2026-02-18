@@ -26,3 +26,6 @@ jobs:
 
     - name: 🧪 Running Thureos-91 Tests
       run: npm test
+
+    - name: Run Integrity Stress Test
+      run: npm run test:stress
