@@ -3,9 +3,7 @@
 ---
 
 <div align="center">
-  <img src="thureos91.png" alt="Thureos-91" width="300" />
-
-<h1>Thureos-91 🛡️</h1>
+  <img src="thureos91.png" alt="Thureos-91" width="800" height="200"  />
 
 **High-Density Encoding Protocol with XOR Encryption and CRC-16 Integrity.**
 
@@ -65,7 +63,9 @@ Thureos-91 prioritizes **Data Integrity** and **Privacy**.
 
 ```bash
 npm install thureos-91
+```
 
+---
 
 ```javascript
 import Thureos91 from 'thureos-91';
