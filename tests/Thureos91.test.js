@@ -3,6 +3,7 @@ import Thureos91 from '../src/Thureos91.js';
 describe('Thureos-91 Protocol Tests', () => {
   const key = "your-key-to-the-shield";
   const text = "Data protected by the Thureos shield 🛡️";
+  const PASS = "thureos-vanguard-high-security-2026";
 
   test('It should successfully encrypt and decrypt text.', () => {
     const encoded = Thureos91.encode(text, key);
@@ -26,5 +27,22 @@ describe('Thureos-91 Protocol Tests', () => {
     const encoded = Thureos91.encode(bin, key);
     const decoded = Thureos91.decode(encoded, key);
     expect(decoded).toEqual(bin);
+  });
+
+  test('It should throw an error for unsupported versions.', () => {
+    expect(() => Thureos91.encode(text, key, 'v2.0')).toThrow(/Unsupported version/);
+  });
+
+  test('v1.1 Protocol: Async Encoding/Decoding with Salt', async () => {
+    const secret = "Thureos v1.1 is safer with PBKDF2";
+    
+    const shielded = await Thureos91.encode(secret, PASS, 'v1.1');
+    
+    expect(shielded).toContain("'");
+    
+    const recovered = await Thureos91.decode(shielded, PASS);
+    const text = new TextDecoder().decode(recovered);
+    
+    expect(text).toBe(secret);
   });
 });
