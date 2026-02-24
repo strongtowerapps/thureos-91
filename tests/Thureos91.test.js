@@ -1,3 +1,8 @@
+import { webcrypto } from 'node:crypto';
+if (!globalThis.crypto) {
+  globalThis.crypto = webcrypto;
+}
+
 import Thureos91 from '../src/Thureos91.js';
 
 describe('Thureos-91 Protocol Tests', () => {
