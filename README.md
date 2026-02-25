@@ -20,8 +20,8 @@ Thureos-91 is a modern JavaScript protocol designed to shield and transport bina
 
 
 ## 🔄 Version Support
-- **v1.1 (Standard)**: Salted keys, PBKDF2, and reordered alphabet. Recommended for all new implementations.
-- **v1.0 (Legacy)**: Support for original shields without breaking existing systems.
+- **v1.1 (Secure Standard)**:  Keys with salt, PBKDF2, and reordered alphabet. Recommended for all new implementations requiring an additional layer of security.
+- **v1.0 (Basic Security Standard)**: Support for original shields without breaking existing systems. Includes basic security with XOR Layer, CRC-16, and Radix-91 encryption.
 
 
 ### 📊 Technical Note on Efficiency
@@ -35,7 +35,7 @@ Thureos-91 prioritizes **Data Integrity** and **Privacy**.
 
 ### 🔄 Protocol Comparison
 
-| Feature | Base64 | Base85 | Common Base91 | **Thureos-91 v1.0 (Legacy)** | **Thureos-91 T91 v1.1 (Standard)** |
+| Feature | Base64 | Base85 | Common Base91 | **Thureos-91** | **Thureos-91 v1.1 (PBKDF2 with Salt)** |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **Data Expansion** | ~33.3% | ~25% | ~23% | **~23% (for >200B)** | **~23% (for >200B)** |
 | **Built-in Encryption** | ❌ No | ❌ No | ❌ No | ✅ **XOR Layer** | ✅ **XOR Layer** |
@@ -55,7 +55,7 @@ Thureos-91 prioritizes **Data Integrity** and **Privacy**.
 3.  **Security Provenance:** All releases are published using GitHub OIDC Trusted Publishers, ensuring that the NPM package matches the source code exactly.
 
 
-### 🛠️ Best Use Cases
+### 🛠️ Best Use Cases Thureos-91
 * **IoT & Edge Computing:** Perfect for low-bandwidth devices where every bit counts.
 * **Session Tokens & Cookies:** Generate compact tokens that remain tamper-proof on the client-side.
 * **NoSQL Databases:** Obfuscate sensitive fields while maintaining high storage density.
@@ -69,7 +69,7 @@ npm install thureos-91
 ---
 
 ## 🛠️ Usage Examples
-* **v1.1 Standard (Recommended):**
+* **Thureos-91 v1.1 (PBKDF2 with Salt):**
 The new standard uses asynchronous key derivation for maximum resistance against brute-force attacks.
 
 ```javascript
@@ -90,8 +90,8 @@ try {
 }
 ```
 
-* **v1.0 Legacy:**
-Synchronous and lightweight for simple obfuscation.
+* **Thureos-91:**
+Synchronous and lightweight for simple obfuscation. Includes basic security with XOR Layer, CRC-16, and Radix-91 encryption.
 
 ```javascript
 import Thureos91 from 'thureos-91';
@@ -110,11 +110,12 @@ try {
 ```
 ---
 
-## 🚀 Version 1.1 Features
-- **Deterministic v1.0 Fallback**: Maintains compatibility with older shields.
-- **Enhanced v1.1 Security**: Integrates PBKDF2 with 100,000 iterations and random salt.
-- **JSON-Friendly**: Uses `'` as a separator to avoid escape character bloat in API requests.
-- **CLI Robust**: Reordered alphabet to prevent terminal command corruption.
+## 🚀 Version 1.1.1 Features
+- **Deterministic Fix**: Fixed critical alphabet duplication for v1.0.x, allowing the use of Thureos 91 with basic security using an XOR layer, CRC-16, and Radix-91 encryption.
+- **Enhanced Security**: PBKDF2 (100k iterations) + Salt.
+- **Auto Support**: Built-in recovery for v1.0.x shields (use with caution).
+- **JSON Safe**: Apostrophe (`'`) separator for zero-escape overhead.
+---
 
 ## 🔬 Interactive Watchtower
 Audit your data integrity and inspect the "Shielded Pack" structure in real-time at our web laboratory:

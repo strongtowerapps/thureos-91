@@ -9,7 +9,7 @@
 // import 'fast-text-encoding';
 
 // Alphabet original (v1.0)
-const ALPHABET_V1_0 = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!#$%&()*+,-./:;<=>?@[]^_`{|}~;";
+const ALPHABET_V1_0 = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!#$%&()*+,-./:;<=>?@[]^_`{|}~";
 // Alphabet new (v1.1)
 const ALPHABET_V1_1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&()*+,-./:;<=>?@[]^_`{|}~abcdefghijklmnopqrstuvwxyz0123456789";
 
