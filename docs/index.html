@@ -39,7 +39,7 @@
 
                     <div id="versionContainer">
                         <label class="block text-xs uppercase tracking-widest mb-1 text-slate-500">Protocol Version</label>
-                        <select id="versionSelect" class="w-full bg-slate-950 border border-slate-800 rounded p-3 mb-4 focus:outline-none focus:ring-2 focus:ring-[#634832] text-stone-200"><option value="v1.1">v1.1 (Salted + PBKDF2)</option><option value="v1.0">v1.0 (Legacy)</option></select>
+                        <select id="versionSelect" class="w-full bg-slate-950 border border-slate-800 rounded p-3 mb-4 focus:outline-none focus:ring-2 focus:ring-[#634832] text-stone-200"><option value="v1.1">v1.1 (Thureos-91 + Salted + PBKDF2)</option><option value="v1.0">v1.0 (Thureos-91)</option></select>
                     </div>
 
                     <div>
@@ -83,7 +83,7 @@
     </div>
 
     <script>
-        const ALPHABET_V1_0 = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!#$%&()*+,-./:;<=>?@[]^_`{|}~;";
+        const ALPHABET_V1_0 = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!#$%&()*+,-./:;<=>?@[]^_`{|}~";
         const ALPHABET_V1_1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&()*+,-./:;<=>?@[]^_`{|}~abcdefghijklmnopqrstuvwxyz0123456789";
         const BASE = 91;
         let mode = 'encode';
