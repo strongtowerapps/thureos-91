@@ -1,15 +1,15 @@
 # Security Policy for Thureos-91 🛡️
 
 ## Commitment to Security
-At **Strong Tower**, data security is not just a feature; it is our foundation. If you believe you have found a security vulnerability in the Thureos-91 protocol, we encourage you to report it to us responsibly.
+At **Strong Tower Apps™**, data security is not just a feature; it is our foundation. If you believe you have found a security vulnerability in the Thureos-91 protocol, we encourage you to report it to us responsibly.
 
 ## Supported Versions
 Currently, we provide security patches for the following versions:
 
 | Version | Supported |
 | :--- | :--- |
-| 1.0.x | ✅ Yes |
-| < 1.0.0 | ❌ No |
+| >=1.1.1 | ✅ Yes |
+| <=1.1.0 | ❌ No |
 
 ## Reporting a Vulnerability
 If you discover a vulnerability that compromises the integrity or privacy of data shielded by Thureos-91, please **open a new Issue** in this repository. 
