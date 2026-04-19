@@ -8,7 +8,7 @@
 **High-Density Encoding Protocol with XOR Encryption and CRC-16 Integrity.**
 
 [![NPM Version](https://img.shields.io/npm/v/thureos-91?color=amber&label=Thureos-91&style=for-the-badge)](https://www.npmjs.com/package/thureos-91)
-[![NPM Downloads](https://img.shields.io/npm/dm/thureos-91?color=blue&style=for-the-badge)](https://www.npmjs.com/package/thureos-91)
+[![NPM Downloads](https://img.shields.io/npm/dt/thureos-91?color=blue&amp;style=for-the-badge)](https://www.npmjs.com/package/thureos-91)
 [![License](https://img.shields.io/npm/l/thureos-91?style=for-the-badge)](LICENSE)
 
 </div>
@@ -45,8 +45,29 @@ Thureos-91 prioritizes **Data Integrity** and **Privacy**.
 | **Integrates PBKDF2 with salt** | ❌ No | ❌ No | ❌ No | ❌ No | ✅ **Yes** |
 
 > **"Thureos-91 is unique when you need to obfuscate data, ensure zero tampering, and maintain maximum storage density."**
----
 
+### Performance Comparison (Overhead): v1.0 vs v1.1
+
+| Performance Metric | Thureos-91 v1.0 (Basic Security) | Thureos-91 v1.1 (PBKDF2 with Salt) |
+| :--- | :--- | :--- |
+| **Initialization Time** | Near-instantaneous (<1 ms) | Slow (100ms - 500ms*) |
+| **Per-Message Latency** | Ultra-low | Medium (initial only) |
+| **Throughput (Data flow)** | Maximum | Maximum (after initialization) |
+| **CPU Consumption** | Minimal | High peak during KDF |
+| **Packet Size** | Payload + CRC + Base91 | + Random Salt |
+
+### Encryption Process Summary: Version Comparison
+
+| Component | Thureos-91 v1.0 (Basic Security) | Thureos-91 v1.1 (PBKDF2 with Salt) | Technical / Mathematical Function | Primary Objective |
+| :--- | :--- | :--- | :--- | :--- |
+| **Cryptographic Salt** | N/A | Unique Random Value | Random Cryptographic Salt | Uniqueness and defense against Rainbow Tables. |
+| **PBKDF2** | N/A | Key Stretching | Key Derivation Function (KDF) | Resistance to brute-force attacks. |
+| **XOR Layer** | Direct Key | Derived Key | Bitwise XOR Operation | Confidentiality (Symmetric encryption). |
+| **CRC-16** | Applied | Applied | Polynomial Division | Integrity (Error detection). |
+| **Base91** | Applied | Applied | Radix-91 Encoding | Transport efficiency (ASCII). |
+
+
+---
 
 ### 🛡️ Why choose Thureos-91?
 
@@ -60,7 +81,6 @@ Thureos-91 prioritizes **Data Integrity** and **Privacy**.
 * **Session Tokens & Cookies:** Generate compact tokens that remain tamper-proof on the client-side.
 * **NoSQL Databases:** Obfuscate sensitive fields while maintaining high storage density.
 ---
-
 
 ## 🚀 Installation and Use
 ```bash
@@ -110,7 +130,7 @@ try {
 ```
 ---
 
-## 🚀 Version 1.1.1 Features
+## 🚀 Version >=1.1.1 Features
 - **Deterministic Fix**: Fixed critical alphabet duplication for v1.0.x, allowing the use of Thureos 91 with basic security using an XOR layer, CRC-16, and Radix-91 encryption.
 - **Enhanced Security**: PBKDF2 (100k iterations) + Salt.
 - **Auto Support**: Built-in recovery for v1.0.x shields (use with caution).
